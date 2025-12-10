@@ -7,6 +7,6 @@ int main() {
 
 	sum = a + b;
 	std::cout << "Your sum is: " << sum << std::endl;
-	
+	 
 	return 0;
 }
