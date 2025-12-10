@@ -3,8 +3,22 @@
 #include <vector>
 #include <string>
 
-std::vector<std::string> readLinesFromFile() {
+std::vector<std::string> readLinesFromFile(const std::string& filename) {
+    std::vector<std::string> lines;
+    std::ifstream file(filename);
 
+    if (!file.is_open()) {
+        std::cerr << "Ошибка: не удалось открыть файл " << filename << std::endl;
+        return lines;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        lines.push_back(line);
+    }
+
+    file.close();
+    return lines;
 }
 
 void printLinesToScreen(const std::vector<std::string>& lines) {
@@ -36,10 +50,19 @@ void writeLinesToFile(const std::vector<std::string>& lines, const std::string& 
 
 int main() {
 
-	 printLinesToScreen(lines);
+    std::string inputFilename = "input.txt";
     
+    std::vector<std::string> lines = readLinesFromFile(inputFilename);
+    
+    if (lines.empty()) {
+        std::cout << "File is empty or does not exist." << std::endl;
+        return 1;
+    }
+    
+    printLinesToScreen(lines);
+ 
     std::string outputFilename = "output.txt";
-	
     writeLinesToFile(lines, outputFilename);
-	return 0;
+    
+	  return 0;
 }
