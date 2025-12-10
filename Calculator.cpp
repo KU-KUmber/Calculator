@@ -1,12 +1,21 @@
 ﻿#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+
+std::vector<std::string> readLinesFromFile() {
+
+}
+
+void printLinesToScreen() {
+
+}
+
+void writeLinesToFile() {
+
+}
+
 
 int main() {
-	int a, b, sum = 0;
-	std::cout << "write a and b to sum them" << std::endl;
-	std::cin >> a >> b;
-
-	sum = a + b;
-	std::cout << "Your sum is: " << sum << std::endl;
-	 
 	return 0;
 }
