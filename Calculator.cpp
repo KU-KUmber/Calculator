@@ -31,5 +31,11 @@ void writeLinesToFile() {
 
 
 int main() {
+    std::string inputFilename = "input.txt";
+
+   
+    std::vector<std::string> lines = readLinesFromFile(inputFilename);
+
+    
 	return 0;
 }
